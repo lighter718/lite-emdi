@@ -27,7 +27,7 @@ export const Workflow: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-[#052752] text-white py-20 lg:py-24 border-b border-slate-800 overflow-hidden">
+    <section id="cara-kerja" className="relative bg-[#052752] text-white py-20 lg:py-24 border-b border-slate-800 overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#FCD816]/5 rounded-full blur-[130px] pointer-events-none" />
