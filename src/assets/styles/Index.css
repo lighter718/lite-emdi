@@ -1,0 +1,33 @@
+@import 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap';
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+/* Custom Marquee Animation untuk Portofolio Seamless */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+/* Pause animasi saat cursor hover di atas foto */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
