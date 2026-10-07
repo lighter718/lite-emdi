@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
 
 // Import gambar portofolio
 import porto1 from '../../assets/images/all-day.webp';
@@ -19,6 +21,7 @@ const PORTFOLIO_ITEMS = [
 
 export const Portfolio: React.FC = () => {
   const duplicatedItems = [...PORTFOLIO_ITEMS, ...PORTFOLIO_ITEMS];
+  const waUrl = "https://wa.me/6287894942351?text=Halo%20Lite%20EMDI,%20saya%20ingin%20melihat%20portofolio%20lainnya";
 
   return (
     <section id="portofolio" className="py-16 lg:py-28 bg-[#052752] text-white overflow-hidden scroll-mt-24 relative">
@@ -43,37 +46,27 @@ export const Portfolio: React.FC = () => {
 
       {/* ------------------------------------------------------------- */}
       {/* 1. TAMPILAN KHUSUS MOBILE (block sm:hidden)                   */}
-      {/* Full Photo Feed, Tanpa Grid Card, Tulisan Overlay Halus        */}
+      {/* Full Photo Feed, Tanpa Tulisan Overlay                        */}
       {/* ------------------------------------------------------------- */}
-      <div className="block sm:hidden space-y-8 relative z-10">
+      <div className="block sm:hidden space-y-8 relative z-10 px-4">
         {PORTFOLIO_ITEMS.map((item) => (
           <div
             key={`mobile-${item.id}`}
-            className="relative w-full overflow-hidden"
+            className="relative w-full overflow-hidden rounded-2xl shadow-lg bg-slate-900 border border-slate-700/60"
           >
             {/* Foto Full Size */}
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-2xl"
             />
-
-            {/* Overlay Gradasi Gelap di Bawah Foto + Tulisan */}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#052752] via-[#052752]/80 to-transparent pt-12 pb-5 px-6">
-              <span className="text-[11px] font-extrabold text-[#FCD816] uppercase tracking-wider block mb-1 drop-shadow-sm">
-                {item.category}
-              </span>
-              <h3 className="font-display font-bold text-xl text-white drop-shadow-md">
-                {item.title}
-              </h3>
-            </div>
           </div>
         ))}
       </div>
 
       {/* ------------------------------------------------------------- */}
       {/* 2. TAMPILAN DESKTOP & TABLET (hidden sm:block)                */}
-      {/* Tetap menggunakan animasi Infinite Marquee                     */}
+      {/* Animasi Infinite Marquee & Efek Pop-Out Hover Utuh            */}
       {/* ------------------------------------------------------------- */}
       <div className="hidden sm:block relative w-full overflow-hidden py-24">
         
@@ -82,13 +75,13 @@ export const Portfolio: React.FC = () => {
         <div className="absolute top-0 right-0 w-24 sm:w-48 h-full bg-gradient-to-l from-[#052752] to-transparent z-20 pointer-events-none" />
 
         {/* Moving Track */}
-        <div className="animate-marquee gap-6 sm:gap-8 px-4">
+        <div className="animate-marquee gap-6 sm:gap-8 px-4 flex">
           {duplicatedItems.map((item, index) => (
             <div
               key={`desktop-${item.id}-${index}`}
               className="relative w-[360px] lg:w-[420px] h-[270px] rounded-2xl group border border-slate-700/60 shadow-2xl bg-slate-900 flex-shrink-0 cursor-pointer transition-all duration-300 z-10 hover:z-50"
             >
-              {/* Kartu Utama */}
+              {/* Kartu Utama dengan Efek Pop-Out */}
               <div className="w-full h-full rounded-2xl overflow-hidden group-hover:overflow-visible transition-all duration-500">
                 <img
                   src={item.image}
@@ -96,18 +89,32 @@ export const Portfolio: React.FC = () => {
                   className="w-full h-full object-cover rounded-2xl transition-all duration-500 ease-out group-hover:absolute group-hover:top-1/2 group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 group-hover:w-auto group-hover:h-auto group-hover:max-w-[480px] group-hover:max-h-[420px] group-hover:scale-110 group-hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group-hover:border-2 group-hover:border-[#FCD816] group-hover:rounded-2xl group-hover:z-30"
                 />
               </div>
-
-              {/* Overlay Text & Gradient */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-[#052752]/90 via-[#052752]/20 to-transparent opacity-90 group-hover:opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none z-20">
-                <span className="text-[11px] font-extrabold text-[#FCD816] uppercase tracking-wider mb-1 drop-shadow-md">
-                  {item.category}
-                </span>
-                <h3 className="font-display font-bold text-lg sm:text-xl text-white drop-shadow-md">
-                  {item.title}
-                </h3>
-              </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* ------------------------------------------------------------- */}
+      {/* 3. BOTTOM CALL TO ACTION (CTA)                                 */}
+      {/* ------------------------------------------------------------- */}
+      <div className="mt-10 sm:mt-14 text-center max-w-2xl mx-auto px-4 relative z-10">
+        <div className="bg-slate-900/80 border border-slate-700/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm shadow-xl space-y-4">
+          <h3 className="text-lg sm:text-xl font-bold text-white font-display">
+            Tertarik melihat portofolio kami yang lain?
+          </h3>
+          
+          <div>
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-[#FCD816] hover:bg-yellow-400 text-[#052752] font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-[#FCD816]/15 hover:scale-105 group cursor-pointer"
+            >
+              <FaWhatsapp className="text-xl" />
+              <span>HUBUNGI KAMI SEKARANG</span>
+              <FiArrowRight className="text-lg transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
       </div>
 

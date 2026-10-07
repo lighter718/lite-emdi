@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FiChevronDown, FiHelpCircle } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
 
 interface FAQItem {
   question: string;
@@ -28,8 +27,6 @@ export const FAQ: React.FC = () => {
       answer: "Eksekusi dilakukan secara cepat tepat setelah sesi diskusi dan kesepakatan paket selesai.",
     },
   ];
-
-  const waUrl = "https://wa.me/6287894942351?text=Halo%20Lite%20EMDI,%20saya%20ingin%20konsultasi%20mengenai%20paket%20layanan";
 
   return (
     <section id="faq" className="relative bg-[#052752] text-white py-20 lg:py-28 border-b border-slate-800 overflow-hidden">
@@ -105,24 +102,6 @@ export const FAQ: React.FC = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom Contact CTA */}
-        <div className="mt-12 text-center bg-slate-800/50 border border-slate-700/80 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left space-y-1">
-            <h3 className="font-bold text-base sm:text-lg text-white">Masih Ada Pertanyaan Lain?</h3>
-            <p className="text-xs sm:text-sm text-slate-300">Konsultasikan langsung kebutuhan bisnismu secara gratis.</p>
-          </div>
-
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#FCD816] hover:bg-yellow-400 text-[#052752] font-extrabold text-sm px-6 py-3.5 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-[#FCD816]/20 flex-shrink-0 cursor-pointer"
-          >
-            <FaWhatsapp className="text-lg" />
-            <span>Tanyakan via WhatsApp</span>
-          </a>
         </div>
 
       </div>

@@ -1,97 +1,112 @@
 import React from 'react';
-import { FiCheckSquare, FiMessageSquare, FiTrendingUp, FiArrowRight } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiZap, FiCheckSquare, FiMessageSquare, FiTrendingUp } from 'react-icons/fi';
 
 export const Workflow: React.FC = () => {
-  const waUrl = "https://wa.me/6287894942351?text=Halo%20Lite%20EMDI,%20saya%20ingin%20konsultasi%203%20Langkah%20Bermitra";
-
   const steps = [
     {
-      number: "01",
-      title: "Pilih Paket",
-      desc: "Tentukan layanan yang paling pas dengan skala usahamu.",
+      phase: "Langkah 01",
+      category: "// STRATEGI & SKALA",
+      title: "Pilih Paket Layanan yang Tepat",
+      description: "Tentukan opsi paket layanan yang paling presisi dengan kebutuhan bisnis, skala operasional, dan target pencapaian bisnismu tanpa biaya tersembunyi.",
+      focus: "Targeting, Custom Plan, Resource Optimization",
       icon: FiCheckSquare,
+      active: true,
     },
     {
-      number: "02",
-      title: "Quick Demo & Diskusi",
-      desc: "Hubungi Sales Executive kami via WhatsApp untuk demo singkat & konsultasi gratis.",
+      phase: "Langkah 02",
+      category: "// KONSULTASI & DEMO",
+      title: "Quick Demo & Diskusi Strategis",
+      description: "Hubungi Sales Executive kami via WhatsApp untuk demo singkat, bedah ekosistem digital, serta konsultasi gratis mengenai arah eksekusi.",
+      focus: "Interactive Demo, Strategy Alignment, Fast Onboarding",
       icon: FiMessageSquare,
+      active: false,
     },
     {
-      number: "03",
-      title: "Eksekusi & Cuan!",
-      desc: "Tim Lite EMDI langsung bergerak mengeksekusi strategi digital bisnismu.",
+      phase: "Langkah 03",
+      category: "// EKSEKUSI & PERTUMBUHAN",
+      title: "Eksekusi & Siap Hasilkan Cuan",
+      description: "Tim ahli Lite EMDI langsung bergerak memproses dan mengeksekusi strategi digital bisnismu secara presisi hingga siap beroperasi penuh.",
+      focus: "Full Implementation, Growth Acceleration, Real-time Review",
       icon: FiTrendingUp,
+      active: false,
     },
   ];
 
   return (
-    <section id="cara-kerja" className="relative bg-[#052752] text-white py-20 lg:py-24 border-b border-slate-800 overflow-hidden">
+    <section id="cara-kerja" className="relative bg-[#052752] text-white py-20 lg:py-28 border-b border-slate-800/80 overflow-hidden">
       
-      {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#FCD816]/5 rounded-full blur-[130px] pointer-events-none" />
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#FCD816]/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-block bg-[#FCD816] text-[#052752] px-3.5 py-1 rounded-full font-black text-xs uppercase tracking-widest shadow-md">
-            WORKFLOW
+        <div className="mb-16 lg:mb-20 space-y-4 border-l-2 border-[#FCD816] pl-6">
+          <div className="inline-flex items-center gap-2 text-[#FCD816] font-mono text-xs font-bold uppercase tracking-widest">
+            <FiZap className="text-sm" />
+            <span>Workflow & Alur Kemitraan</span>
           </div>
 
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Hanya 3 Langkah Mudah untuk Memulai
+            Perjalanan 3 Langkah <br className="hidden sm:inline" />
+            <span className="text-[#FCD816]">Transformasi Digital</span> Bisnismu
           </h2>
           
-          <p className="text-slate-300 text-base sm:text-lg">
-            Proses simpel tanpa ribet, dari konsultasi awal hingga strategi bisnismu berjalan.
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+            Proses kolaborasi yang ringkas, transparan, dan terarah dari titik awal konsultasi hingga strategi bisnismu siap mengudara.
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        {/* Vertical Timeline Container */}
+        <div className="relative pl-6 sm:pl-10 space-y-12 lg:space-y-16">
+          
+          {/* Main Continuous Vertical Line */}
+          <div className="absolute top-3 bottom-3 left-[11px] sm:left-[19px] w-[2px] bg-gradient-to-b from-[#FCD816] via-slate-700 to-slate-800" />
+
           {steps.map((step, idx) => {
             const IconComponent = step.icon;
             return (
-              <div
-                key={idx}
-                className="relative bg-slate-800/50 border border-slate-700/80 rounded-2xl p-8 transition-all duration-300 hover:border-[#FCD816]/50 hover:bg-slate-800/80 hover:shadow-[0_0_25px_rgba(252,216,22,0.1)] group"
-              >
-                {/* Step Number Badge */}
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-4xl font-black text-[#FCD816]/40 group-hover:text-[#FCD816] transition-colors duration-300">
-                    {step.number}
-                  </span>
-                  <div className="w-12 h-12 rounded-xl bg-slate-700/60 text-[#FCD816] flex items-center justify-center text-xl border border-slate-600 group-hover:bg-[#FCD816] group-hover:text-[#052752] transition-all duration-300">
-                    <IconComponent />
-                  </div>
+              <div key={idx} className="relative group pl-6 sm:pl-8">
+                
+                {/* Glowing Node Circle on Line */}
+                <div className={`absolute -left-[23px] sm:-left-[31px] top-1 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
+                  step.active 
+                    ? 'bg-[#FCD816] border-[#FCD816] text-[#052752] shadow-[0_0_15px_rgba(252,216,22,0.6)]' 
+                    : 'bg-[#052752] border-slate-600 text-slate-400 group-hover:border-[#FCD816] group-hover:text-[#FCD816]'
+                }`}>
+                  <IconComponent className="text-xs sm:text-sm" />
                 </div>
 
-                {/* Step Content */}
-                <h3 className="text-xl font-bold text-white mb-3">
+                {/* Phase Tag & Sub-category */}
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <span className="bg-[#FCD816] text-[#052752] font-black text-xs px-3 py-0.5 rounded-md uppercase tracking-wider shadow-sm">
+                    {step.phase}
+                  </span>
+                  <span className="font-mono text-xs text-slate-400 font-semibold tracking-widest uppercase">
+                    {step.category}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white group-hover:text-[#FCD816] transition-colors leading-snug">
                   {step.title}
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  {step.desc}
+
+                {/* Description */}
+                <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+                  {step.description}
                 </p>
+
+                {/* Focus Area Footer Line */}
+                <div className="mt-6 pt-4 border-t border-slate-700/50 flex items-center gap-2 text-xs text-slate-400">
+                  <span className="font-semibold text-slate-300">Focus Areas:</span>
+                  <span className="font-mono text-slate-400">{step.focus}</span>
+                </div>
+
               </div>
             );
           })}
-        </div>
 
-        {/* Bottom CTA Banner */}
-        <div className="mt-16 text-center">
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-[#FCD816] hover:bg-yellow-400 text-[#052752] font-extrabold text-base px-8 py-4 rounded-xl transition-all duration-300 shadow-xl shadow-[#FCD816]/20 transform hover:-translate-y-1 cursor-pointer group"
-          >
-            <FaWhatsapp className="text-xl" />
-            <span>Mulai Langkah Pertama Sekarang</span>
-            <FiArrowRight className="text-lg transition-transform group-hover:translate-x-1" />
-          </a>
         </div>
 
       </div>

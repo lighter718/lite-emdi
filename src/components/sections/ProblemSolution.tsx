@@ -1,11 +1,8 @@
 import React from 'react';
-import { FiXCircle, FiCheck, FiArrowRight } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiXCircle, FiCheck, FiTrendingUp, FiZap } from 'react-icons/fi';
 import { PAIN_POINTS } from '../../data/landingData';
 
 export const ProblemSolution: React.FC = () => {
-  const waUrl = "https://wa.me/6287894942351?text=Halo%20Lite%20EMDI,%20saya%20tidak%20ingin%20bisnis%20saya%20stagnan.%20Mohon%20info%20konsultasi";
-
   return (
     <section className="py-16 lg:py-24 bg-white text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +42,7 @@ export const ProblemSolution: React.FC = () => {
           <div className="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-8 text-center lg:text-left">
+            <div className="lg:col-span-7 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-[#FCD816]/15 border border-[#FCD816]/40 px-4 py-1.5 rounded-full mb-6">
                 <span className="text-[#FCD816] text-xs sm:text-sm font-extrabold uppercase tracking-widest">
                   Saatnya Melangkah Maju
@@ -57,7 +54,7 @@ export const ProblemSolution: React.FC = () => {
               </h2>
 
               <p className="mt-6 text-slate-300 text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl">
-                Setiap hari tanpa strategi digital yang tepat adalah kesempatan pasar yang diambil kompetitor. Yuk, akselerasi branding dan penjualan bisnismu sekarang!
+                Setiap hari tanpa strategi digital yang tepat adalah kesempatan pasar yang diambil kompetitor. LITE EMDI hadir memberikan solusinya secara terukur.
               </p>
 
               {/* Value Highlights */}
@@ -83,21 +80,33 @@ export const ProblemSolution: React.FC = () => {
               </div>
             </div>
 
-            {/* Right CTA Button */}
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#FCD816] hover:bg-yellow-400 text-[#052752] font-extrabold text-base sm:text-lg px-8 py-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#FCD816]/30 group cursor-pointer"
-              >
-                <FaWhatsapp className="text-xl" />
-                <span>Konsultasi Sekarang</span>
-                <FiArrowRight className="text-xl transition-transform group-hover:translate-x-1" />
-              </a>
-              <p className="mt-3 text-xs text-slate-400 font-medium text-center lg:text-right">
-                Gratis Diskusi & Konsultasi Awal
-              </p>
+            {/* Right Side: Solution Statement Card (Menggantikan Tombol WA) */}
+            <div className="lg:col-span-5">
+              <div className="bg-slate-800/80 border border-[#FCD816]/30 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#FCD816]/10 rounded-bl-full pointer-events-none transition-all duration-500 group-hover:scale-110" />
+                
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#FCD816]/20 text-[#FCD816] flex items-center justify-center text-xl font-bold">
+                    <FiTrendingUp />
+                  </div>
+                  <span className="text-xs font-extrabold text-[#FCD816] uppercase tracking-wider">
+                    Solusi Terintegrasi
+                  </span>
+                </div>
+
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+                  Ubah Hambatan Menjadi Peluang Pertumbuhan
+                </h3>
+
+                <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                  Kami tidak sekadar membuat konten atau website, tapi merancang <span className="text-white font-semibold">ekosistem pemasaran digital</span> yang siap membawa bisnis Anda bersaing di level berikutnya.
+                </p>
+
+                <div className="inline-flex items-center gap-2 text-xs font-bold text-[#FCD816] bg-[#FCD816]/10 border border-[#FCD816]/20 px-3 py-1.5 rounded-lg">
+                  <FiZap />
+                  <span>100% Ekosistem Siap Jalan</span>
+                </div>
+              </div>
             </div>
 
           </div>
